@@ -1,4 +1,7 @@
 # Ghana Road Toll Collection System
+# Ghana Road Toll Collection System
+
+![CI](https://github.com/5tring5/ghana-road-toll-system/actions/workflows/ci.yml/badge.svg)
 
 Full-stack monorepo for Ghana's road toll system.
 
