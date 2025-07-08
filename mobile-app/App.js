@@ -1,20 +1,26 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from './screens/HomeScreen';
-import VehicleScreen from './screens/VehicleScreen';
-import TollScreen from './screens/TollScreen';
-
-const Stack = createNativeStackNavigator();
+import { Text, View, StyleSheet } from 'react-native';
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Vehicles" component={VehicleScreen} />
-        <Stack.Screen name="Tolls" component={TollScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <View style={styles.container}>
+      <Text style={styles.heading}>Ghana Road Toll Collection System</Text>
+      <Text>Welcome to the mobile portal</Text>
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#f2f2f2',
+    padding: 16
+  },
+  heading: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 10
+  }
+});

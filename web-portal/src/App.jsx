@@ -1,9 +1,10 @@
-import React from 'react';
+import React from 'react'
 
 export default function App() {
   return (
-    <div className="text-center p-4">
-      <h1 className="text-2xl font-bold text-green-700">Ghana Toll Portal</h1>
+    <div style={{ padding: '2rem', fontFamily: 'Arial' }}>
+      <h1>Welcome to the Ghana Road Toll Collection System</h1>
+      <p>This is the web portal interface (React + Vite).</p>
     </div>
-  );
+  )
 }
