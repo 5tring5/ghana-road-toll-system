@@ -27,6 +27,14 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: Install API dependencies
+        working-directory: api
+        run: npm install
+
+      - name: Run backend tests
+        working-directory: api
+        run: npm test
+
       - name: Install web-portal dependencies
         working-directory: web-portal
         run: npm install
@@ -57,5 +65,5 @@ jobs:
       - name: Echo deployment success
         run: |
           echo "✅ CI/CD Pipeline completed successfully!"
-          echo "🔗 Web App Preview (Vercel): https://ghana-road-toll-system.vercel.app"
+          echo "🔗 Web App Preview (Vercel): https://<your-vercel-project>.vercel.app"
           echo "📱 Mobile App Preview (Expo): https://expo.dev/@<your-expo-username>/ghana-road-toll"
