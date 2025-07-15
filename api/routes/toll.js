@@ -4,14 +4,13 @@ const authenticateToken = require('../middleware/auth');
 
 const rateLimit = require('express-rate-limit');
 
-router.get('/:vehicleId', authenticateToken, (req, res) => {
 // Configure rate limiter: maximum of 100 requests per 15 minutes
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 100, // limit each IP to 100 requests per windowMs
 });
 
-router.get('/:vehicleId', authenticateToken, (req, res) => {
+router.get('/:vehicleId', authenticateToken, limiter, (req, res) => {
   const { vehicleId } = req.params;
   res.json({
     vehicleId,
@@ -23,5 +22,3 @@ router.get('/:vehicleId', authenticateToken, (req, res) => {
 });
 
 module.exports = router;
-
-router.use(limiter);})
