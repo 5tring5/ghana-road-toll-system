@@ -15,11 +15,13 @@ const limiter = rateLimit({
   message: 'Too many requests from this IP, please try again later.'
 });
 
+// Apply rate limiter globally to all routes in this router
+router.use(limiter);
+
 // GET /:vehicleId with validation, logging, and improved error handling
 router.get(
   '/:vehicleId',
   authenticateToken,
-  limiter,
   param('vehicleId').isAlphanumeric().withMessage('Vehicle ID must be alphanumeric'),
   async (req, res) => {
     // Input validation
