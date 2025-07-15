@@ -36,6 +36,12 @@ jobs:
         working-directory: api
         run: npm install
 
+      - name: Set up API test environment
+        working-directory: api
+        run: |
+          echo "PORT=5000" > .env
+          echo "JWT_SECRET=test_secret_key" >> .env
+
       - name: Run backend tests
         working-directory: api
         run: npm test
